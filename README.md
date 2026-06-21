@@ -1,19 +1,19 @@
-# NotebookLM Quiz Printer
+# NotebookLM クイズ印刷ツール
 
-A Chrome Manifest V3 extension that extracts NotebookLM quiz data from `body > app-root` / `data-app-data` and creates an A4 printable worksheet.
+NotebookLM のクイズデータを `body > app-root` / `data-app-data` から抽出し、A4 印刷用ワークシートを作成する Chrome Manifest V3 拡張機能です。
 
-## Usage
+## 使用方法
 
-1. Open `chrome://extensions/` in Chrome.
-2. Turn on Developer mode.
-3. Click "Load unpacked" and select this folder.
-4. Open a NotebookLM quiz page.
-5. Click the extension icon and run "Create worksheet".
+1. Chrome で `chrome://extensions/` を開きます。
+2. デベロッパーモードを有効にします。
+3. 「パッケージ化されていない拡張機能を読み込む」をクリックし、このフォルダを選択します。
+4. NotebookLM のクイズページを開きます。
+5. 拡張機能アイコンをクリックし、「ワークシートを作成」を実行します。
 
-A print-ready tab opens. Use the toolbar to print or hide/show the answer key.
+印刷用に整形されたタブが開きます。ツールバーから印刷したり、解答欄の表示・非表示を切り替えたりできます。
 
-## Notes
+## 注意事項
 
-- NotebookLM uses internal page data, so extraction may need updates if the page structure changes.
-- The extractor searches recursively for a `quiz` array, so small app data shape changes should still work.
-- It attempts to repair common UTF-8 mojibake, but badly damaged source strings may not fully recover.
+- NotebookLM は内部ページデータを使用しているため、ページ構造が変更された場合は抽出処理の更新が必要になる可能性があります。
+- 抽出処理は再帰的に `quiz` 配列を検索するため、小さなアプリデータ構造の変更であれば動作する可能性があります。
+- 一般的な UTF-8 文字化けの修復を試みますが、大きく破損した元文字列は完全には復元できない場合があります。
