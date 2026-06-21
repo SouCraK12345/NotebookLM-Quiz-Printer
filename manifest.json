@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "NotebookLM Quiz Printer",
+  "version": "0.1.0",
+  "description": "NotebookLMのクイズのデータを抜き出して、プリントする",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://notebooklm.google.com/*",
+    "https://*.usercontent.goog/*"
+  ],
+  "action": {
+    "default_title": "NotebookLM Quiz Printer",
+    "default_popup": "popup.html"
+  }
+}

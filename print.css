@@ -1,0 +1,166 @@
+:root {
+  color: #111;
+  background: #ecebe6;
+  font: 14px/1.6 "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 10px;
+  background: #26352e;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #fff;
+  background: #166b45;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#sheet {
+  width: min(210mm, calc(100vw - 24px));
+  min-height: 297mm;
+  margin: 12px auto 24px;
+  padding: 15mm;
+  background: #fff;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.18);
+}
+
+.print-header {
+  border-bottom: 2px solid #111;
+  padding-bottom: 5mm;
+  margin-bottom: 7mm;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.source-title {
+  margin: 2mm 0 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+.question {
+  break-inside: avoid;
+  margin: 0 0 7mm;
+  padding-bottom: 5mm;
+  border-bottom: 1px solid #ddd;
+}
+
+.question-title {
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  gap: 3mm;
+  margin-bottom: 3mm;
+  font-weight: 700;
+}
+
+.choices {
+  display: block;
+  margin: 0 0 3mm 11mm;
+  padding: 0;
+  list-style: none;
+  column-count: 2;
+}
+
+.choice {
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  gap: 2mm;
+}
+
+.hint,
+.rationale {
+  margin: 3mm 0 0 11mm;
+  color: #444;
+  font-size: 1rem;
+}
+
+.answer-key {
+  break-before: page;
+  margin-top: 10mm;
+}
+
+.answer-key h2 {
+  font-size: 20px;
+  border-bottom: 2px solid #111;
+  padding-bottom: 4mm;
+}
+
+.answer-list {
+  column-count: 2;
+  column-gap: 5mm;
+}
+
+.answer-item {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 4mm;
+  font-size: 1rem;
+}
+
+.answer-key .rationale {
+  margin: 1mm 0 0;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.hidden-answers .answer-key,
+.hidden-answers .rationale {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .answer-list {
+    column-count: 2;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .answer-list {
+    column-count: 1;
+  }
+}
+@media print {
+  :root,
+  body {
+    background: #fff;
+  }
+
+  .toolbar {
+    display: none;
+  }
+
+  #sheet {
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+}
+
+
